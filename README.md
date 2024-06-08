@@ -1,8 +1,15 @@
 # Guitar Planet
 
 Bienvenido a **Guitar Planet**, una tienda de guitarras en línea desarrollada con React y TypeScript.
+## Ver el link del proyecto
+```
+https://guitar-planet.netlify.app/
+```
 
 ## Tabla de Contenidos
+
+
+
 
 - [Descripción](#descripción)
 - [Características](#características)
@@ -24,7 +31,7 @@ Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/percyzavala200/guitarplanet.git
+    git clone https://github.com/percyzavala2000/guitar-planet.git
     ```
 
 2. Navega al directorio del proyecto:
