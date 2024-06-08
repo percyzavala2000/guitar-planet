@@ -1,4 +1,4 @@
-import { useState , useEffect} from 'react';
+import { useState , useEffect, useMemo} from 'react';
 import { database } from '../database/data';
 import { Datos, DatosItem } from '../interfaces/interfaces';
 
@@ -76,7 +76,12 @@ const clearCart = () => {
   setCart([]);
   
 }
-
+// state derivado
+ 
+const isEmpy=useMemo(()=> cart.length===0,[cart] ) ;
+const carTotal = useMemo(() => {
+ return cart.reduce((total,item)=>total+(item.quantity*item.price),0)
+},[cart])
   
   return {
    data,
@@ -85,7 +90,9 @@ const clearCart = () => {
    clearCart,
    decrementarQuantity,
    incrementarQuantity,
-   removerFromCart,setCart
+   removerFromCart,setCart,
+   isEmpy,
+   carTotal
 
   }
 }

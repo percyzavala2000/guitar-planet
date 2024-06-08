@@ -1,14 +1,10 @@
-import { useMemo } from 'react';
+
 import {  FuncionProps } from '../interfaces/interfaces';
+import { useCart } from '../hooks/useCart';
 
 
 const Header = ({cart,removerFromCart,incrementarQuantity,decrementarQuantity,clearCart}:FuncionProps) => {
- // state derivado
- 
- const isEmpy=useMemo(()=> cart.length===0,[cart] ) ;
- const carTotal = useMemo(() => {
-  return cart.reduce((total,item)=>total+(item.quantity*item.price),0)
- },[cart])
+ const {isEmpy,carTotal}=useCart();
   return (
   
     <header className="py-5 header">
