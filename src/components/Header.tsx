@@ -1,12 +1,14 @@
-import { DatosItem } from '../interfaces/interfaces';
+import { useMemo } from 'react';
+import {  FuncionProps } from '../interfaces/interfaces';
 
-const Header = ({cart}:{cart:DatosItem[]}) => {
+
+const Header = ({cart,removerFromCart,incrementarQuantity,decrementarQuantity,clearCart}:FuncionProps) => {
  // state derivado
  
- const isEmpy=()=> cart.length===0;
- const carTotal = () => {
-  return cart.reduce((total:number,item:DatosItem)=>total+(item.quantity*item.price),0);
- }
+ const isEmpy=useMemo(()=> cart.length===0,[cart] ) ;
+ const carTotal = useMemo(() => {
+  return cart.reduce((total,item)=>total+(item.quantity*item.price),0)
+ },[cart])
   return (
   
     <header className="py-5 header">
@@ -15,17 +17,17 @@ const Header = ({cart}:{cart:DatosItem[]}) => {
                 <div className="col-8 col-md-3">
                     <a href="index.html">
                       {/* <div> Guitar Planet </div> */}
-                        <img className="img-fluid" src="./public/img/logito2.png" alt="imagen logo" /> *
+                        <img className="img-fluid" src="/img/logito2.png" alt="imagen logo" /> *
                     </a>
                 </div>
                 <nav className="col-md-6 a mt-5 d-flex align-items-start justify-content-end">
                     <div 
                         className="carrito"
                     >
-                        <img className="img-fluid" src="./public/img/carrito.png" alt="imagen carrito" />
+                        <img className="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
 
                         <div id="carrito" className="bg-white p-3">
-                          { isEmpy () ? (
+                          { isEmpy? (
                             
                             <p className="text-center">El carrito esta vacio</p>
                           ):(
@@ -62,6 +64,7 @@ const Header = ({cart}:{cart:DatosItem[]}) => {
                                             <button
                                                 type="button"
                                                 className="btn btn-dark"
+                                                onClick={()=>decrementarQuantity(e.id)}
                                             >
                                                 -
                                             </button>
@@ -69,6 +72,7 @@ const Header = ({cart}:{cart:DatosItem[]}) => {
                                             <button
                                                 type="button"
                                                 className="btn btn-dark"
+                                                onClick={()=>incrementarQuantity(e.id)}
                                             >
                                                 +
                                             </button>
@@ -77,6 +81,7 @@ const Header = ({cart}:{cart:DatosItem[]}) => {
                                             <button
                                                 className="btn btn-danger"
                                                 type="button"
+                                                onClick={()=>removerFromCart(e.id)}
                                             >
                                                 X
                                             </button>
@@ -91,8 +96,8 @@ const Header = ({cart}:{cart:DatosItem[]}) => {
                                     
                                 </tbody>
                             </table>
-                            <p className="text-end">Total pagar: <span className="fw-bold">S/. {carTotal()}</span></p>
-                            <button className="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
+                            <p className="text-end">Total pagar: <span className="fw-bold">S/. {carTotal}</span></p>
+                            <button className="btn btn-dark w-100 mt-3 p-2" onClick={clearCart}   >Vaciar Carrito</button>
                             </>
                           ) }
 

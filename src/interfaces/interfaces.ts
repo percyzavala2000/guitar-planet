@@ -23,3 +23,11 @@ export type DatosItem={
  
   
 }
+export type FuncionProps ={
+
+  cart:DatosItem[],
+  removerFromCart:(id:Datos['id'])=>void,
+  incrementarQuantity:(id:Datos['id'])=>void,
+  decrementarQuantity:(id:Datos['id'])=>void,
+  clearCart:()=>void
+}

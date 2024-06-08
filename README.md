@@ -8,21 +8,15 @@ Bienvenido a **Guitar Planet**, una tienda de guitarras en línea desarrollada c
 - [Características](#características)
 - [Instalación](#instalación)
 - [Uso](#uso)
-- [Scripts Disponibles](#scripts-disponibles)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
 
 ## Descripción
 
-**Guitar Planet** es una aplicación web para comprar y vender guitarras. Ofrece una amplia gama de guitarras de diferentes marcas y modelos, con descripciones detalladas y opiniones de usuarios.
+**Guitar Planet** es una aplicación web para comprar y vender guitarras. se a implementado el carrito de compras persistente en localStorage, donde ustedes podrian implementar mas aun.
 
 ## Características
 
-- Catálogo de guitarras con búsqueda y filtros.
-- Detalles y especificaciones de cada guitarra.
-- Opiniones y calificaciones de usuarios.
-- Carrito de compras y proceso de pago seguro.
+
+- Carrito de compras .
 
 ## Instalación
 
@@ -30,7 +24,7 @@ Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/tu-usuario/guitar-planet.git
+    git clone https://github.com/percyzavala200/guitarplanet.git
     ```
 
 2. Navega al directorio del proyecto:
