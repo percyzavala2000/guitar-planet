@@ -30,4 +30,6 @@ export type FuncionProps ={
   incrementarQuantity:(id:Datos['id'])=>void,
   decrementarQuantity:(id:Datos['id'])=>void,
   clearCart:()=>void
+  carTotal:number
+  isEmpy:boolean
 }

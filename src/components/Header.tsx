@@ -1,10 +1,10 @@
 
 import {  FuncionProps } from '../interfaces/interfaces';
-import { useCart } from '../hooks/useCart';
 
 
-const Header = ({cart,removerFromCart,incrementarQuantity,decrementarQuantity,clearCart}:FuncionProps) => {
- const {isEmpy,carTotal}=useCart();
+
+const Header = ({cart,removerFromCart,incrementarQuantity,decrementarQuantity,clearCart,isEmpy,carTotal}:FuncionProps) => {
+
   return (
   
     <header className="py-5 header">

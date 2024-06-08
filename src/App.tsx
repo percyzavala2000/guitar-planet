@@ -7,11 +7,11 @@ import { useCart } from './hooks/useCart';
 
 
 function App() {
-  const {data,cart,addToCart,removerFromCart,incrementarQuantity,decrementarQuantity,clearCart}=useCart();
+  const {data,cart,addToCart,removerFromCart,incrementarQuantity,decrementarQuantity,clearCart,isEmpy,carTotal}=useCart();
 
   return (
     <>
-    <Header  cart={cart} removerFromCart={removerFromCart} incrementarQuantity={incrementarQuantity} decrementarQuantity ={decrementarQuantity } clearCart ={clearCart }  />
+    <Header  cart={cart} removerFromCart={removerFromCart} incrementarQuantity={incrementarQuantity} decrementarQuantity ={decrementarQuantity } clearCart ={clearCart } isEmpy={isEmpy} carTotal={carTotal}  />
       
 
     <main className="container-xl mt-5">
