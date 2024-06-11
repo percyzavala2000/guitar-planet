@@ -1,33 +1,33 @@
 # Guitar Planet
 
-Bienvenido a **Guitar Planet**, una tienda de guitarras en línea desarrollada con React y TypeScript.
-## Ver el link del proyecto
-```
-https://guitar-planet.netlify.app/
-```
+**Guitar Planet** es una tienda de guitarras en línea desarrollada con Vite, React y TypeScript. Este proyecto utiliza `useReducer` para el manejo del estado del carrito de compras.
 
+puedes ver el demo en el siguiente enlace: [Guitar Planet](https://guitar-planet.netlify.app/) 
 ## Tabla de Contenidos
 
-
-
-
 - [Descripción](#descripción)
-- [Características](#características)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
 - [Instalación](#instalación)
 - [Uso](#uso)
+- [Scripts Disponibles](#scripts-disponibles)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Contribuciones](#contribuciones)
+- [Licencia](#licencia)
 
 ## Descripción
 
-**Guitar Planet** es una aplicación web para comprar y vender guitarras. se a implementado el carrito de compras persistente en localStorage, donde ustedes podrian implementar mas aun.
+**Guitar Planet** es una aplicación web que permite a los usuarios explorar, buscar y comprar guitarras. Incluye funcionalidades como la gestión de un carrito de compras.
 
-## Características
+## Tecnologías Utilizadas
 
-
-- Carrito de compras .
+- **Vite**: Para el empaquetado y la configuración del proyecto.
+- **React**: Biblioteca principal para la construcción de la interfaz de usuario.
+- **TypeScript**: Para añadir tipado estático y mejorar la mantenibilidad del código.
+- **useReducer**: Para manejar el estado del carrito de compras de manera eficiente.
 
 ## Instalación
 
-Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
+Sigue estos pasos para configurar el proyecto en tu entorno local:
 
 1. Clona el repositorio:
     ```bash
@@ -39,14 +39,14 @@ Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
     cd guitar-planet
     ```
 
-3. Instala las dependencias:
+3. Instala las dependencias utilizando npm:
     ```bash
     npm install
     ```
 
 ## Uso
 
-Para iniciar la aplicación en modo de desarrollo, utiliza el siguiente comando:
+Para iniciar la aplicación en modo de desarrollo, ejecuta el siguiente comando:
 
 ```bash
-npm start
+npm run dev

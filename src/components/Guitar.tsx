@@ -1,10 +1,18 @@
-import {  DatosItem} from '../interfaces/interfaces';
+import {  Datos} from '../interfaces/interfaces';
+import { CartAction } from '../reducers/cartReducer';
 
 
 //{data:Datos,addToCart: (item: Datos) => void} INLINE TYPE
+type GuitarProps={
+  data:Datos;
+  dispatch: React.Dispatch<CartAction>
+}
 
-const Guitar = ({data,addToCart}:{data:any,addToCart:(item:DatosItem)=>void}) => {
+const Guitar = ({data,dispatch}:GuitarProps) => {
   const {description,image,name,price}=data
+
+  console.log("desde aqui",data);
+  
 
   return (
    <>
@@ -19,7 +27,7 @@ const Guitar = ({data,addToCart}:{data:any,addToCart:(item:DatosItem)=>void}) =>
                     <button 
                         type="button"
                         className="btn btn-dark w-100"
-                        onClick={()=>addToCart(data)}
+                        onClick={()=>dispatch({type:'add-to-cart',payload:{item:data}})}
                     >Agregar al Carrito</button>
                 </div>
             </div>

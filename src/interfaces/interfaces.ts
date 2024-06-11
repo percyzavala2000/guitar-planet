@@ -1,3 +1,5 @@
+import { CartAction } from '../reducers/cartReducer';
+
 export type Datos = {
   id: number,
   name: string,
@@ -26,10 +28,7 @@ export type DatosItem={
 export type FuncionProps ={
 
   cart:DatosItem[],
-  removerFromCart:(id:Datos['id'])=>void,
-  incrementarQuantity:(id:Datos['id'])=>void,
-  decrementarQuantity:(id:Datos['id'])=>void,
-  clearCart:()=>void
-  carTotal:number
-  isEmpy:boolean
+  dispatch: React.Dispatch<CartAction>,
+
+
 }

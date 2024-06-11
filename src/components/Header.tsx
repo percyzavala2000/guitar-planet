@@ -1,10 +1,17 @@
 
+import { useMemo } from 'react';
 import {  FuncionProps } from '../interfaces/interfaces';
 
 
 
-const Header = ({cart,removerFromCart,incrementarQuantity,decrementarQuantity,clearCart,isEmpy,carTotal}:FuncionProps) => {
+const Header = ({cart,dispatch}:FuncionProps) => {
+  const isEmpy=useMemo(()=> cart.length===0,[cart] ) ;
 
+
+  const carTotal = useMemo(() => {
+   return cart.reduce((total,item)=>total+(item.quantity*item.price),0)
+  },[cart])
+    
   return (
   
     <header className="py-5 header">
@@ -60,7 +67,7 @@ const Header = ({cart,removerFromCart,incrementarQuantity,decrementarQuantity,cl
                                             <button
                                                 type="button"
                                                 className="btn btn-dark"
-                                                onClick={()=>decrementarQuantity(e.id)}
+                                                onClick={()=>dispatch({type:"decrease-cuantity",payload:{id:e.id}})}
                                             >
                                                 -
                                             </button>
@@ -68,7 +75,7 @@ const Header = ({cart,removerFromCart,incrementarQuantity,decrementarQuantity,cl
                                             <button
                                                 type="button"
                                                 className="btn btn-dark"
-                                                onClick={()=>incrementarQuantity(e.id)}
+                                                onClick={()=>dispatch({type:"increase-cuantity",payload:{id:e.id}})}
                                             >
                                                 +
                                             </button>
@@ -77,7 +84,7 @@ const Header = ({cart,removerFromCart,incrementarQuantity,decrementarQuantity,cl
                                             <button
                                                 className="btn btn-danger"
                                                 type="button"
-                                                onClick={()=>removerFromCart(e.id)}
+                                                onClick={()=>dispatch({type:'remove-from-cart',payload:{id:e.id}})}
                                             >
                                                 X
                                             </button>
@@ -93,7 +100,7 @@ const Header = ({cart,removerFromCart,incrementarQuantity,decrementarQuantity,cl
                                 </tbody>
                             </table>
                             <p className="text-end">Total pagar: <span className="fw-bold">S/. {carTotal}</span></p>
-                            <button className="btn btn-dark w-100 mt-3 p-2" onClick={clearCart}   >Vaciar Carrito</button>
+                            <button className="btn btn-dark w-100 mt-3 p-2" onClick={()=>dispatch({type:"clear-cart"})}   >Vaciar Carrito</button>
                             </>
                           ) }
 
